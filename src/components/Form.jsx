@@ -12,7 +12,7 @@ class Form extends Component {
       <div>
         <form>
           <label htmlFor="name">
-            Nome
+            Nome:
             <input
               name="name"
               type="text"
@@ -23,7 +23,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="description">
-            Descrição
+            Descrição:
             <input
               name="description"
               type="textarea"
@@ -34,7 +34,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="attr1">
-            Attr1
+            Attr1:
             <input
               name="attr1"
               type="number"
@@ -45,7 +45,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="attr2">
-            Attr2
+            Attr2:
             <input
               name="attr2"
               type="number"
@@ -56,7 +56,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="attr3">
-            Attr3
+            Attr3:
             <input
               name="attr3"
               type="number"
@@ -67,7 +67,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="image">
-            Imagem
+            Imagem:
             <input
               name="image"
               type="text"
@@ -78,7 +78,7 @@ class Form extends Component {
           </label>
 
           <label htmlFor="select">
-            Raridade
+            Raridade:
             <select
               name="select"
               data-testid="rare-input"
