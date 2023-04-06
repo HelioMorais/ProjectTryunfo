@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import ListCard from './components/ListCard';
 
 class App extends React.Component {
   state = {
@@ -91,7 +92,7 @@ class App extends React.Component {
   render() {
     const {
       name, description, attr1, attr2, attr3, image, rare, trunfo,
-      buttonDisabled, hasTrunfo, imgUrl } = this.state;
+      buttonDisabled, hasTrunfo, imgUrl, deck } = this.state;
     return (
       <main>
         <Form
@@ -118,6 +119,9 @@ class App extends React.Component {
           cardRare={ rare }
           cardTrunfo={ trunfo }
         />
+        <section>
+          <ListCard cardDeck={ deck } />
+        </section>
       </main>
 
     );
