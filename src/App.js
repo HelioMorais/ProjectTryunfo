@@ -11,15 +11,16 @@ class App extends React.Component {
     attr2: 0,
     attr3: 0,
     rare: 'normal',
-    trunfo: false,
+    trunfo: true,
     imgUrl: '',
     buttonDisabled: true,
-
+    deck: [],
+    hasTrunfo: false,
   };
 
   handleChange = ({ target }) => {
     this.setState(() => ({
-      [target.name]: target.type === 'checkbox' ? target.checked : target.value,
+      [target.name]: (target.type === 'checkbox') ? target.checked : target.value,
     }), () => {
       const {
         name, description, attr1, attr2, attr3, image, rare,
@@ -47,6 +48,40 @@ class App extends React.Component {
     });
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const {
+      name, description, attr1, attr2, attr3,
+      image, rare, trunfo, imgUrl,
+    } = this.state;
+    this.setState((previousState) => ({
+      deck: [...previousState.deck, {
+        name,
+        description,
+        attr1,
+        attr2,
+        attr3,
+        image,
+        rare,
+        trunfo,
+        imgUrl,
+      }],
+    }), () => {
+      this.setState({
+        name: '',
+        description: '',
+        attr1: 0,
+        attr2: 0,
+        attr3: 0,
+        image: '',
+        rare: 'normal',
+        trunfo: false,
+        buttonDisabled: true,
+        imgUrl: '',
+      });
+    });
+  };
+
   render() {
     const {
       name, description, attr1, attr2, attr3, image, rare, trunfo,
@@ -65,6 +100,7 @@ class App extends React.Component {
           hasTrunfo={ hasTrunfo }
           onInputChange={ this.handleChange }
           isSaveButtonDisabled={ buttonDisabled }
+          onSaveButtonClick={ this.handleSubmit }
         />
         <Card
           cardName={ name }

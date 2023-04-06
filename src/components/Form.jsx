@@ -10,7 +10,7 @@ class Form extends Component {
     } = this.props;
     return (
       <div>
-        <form>
+        <form onSubmit={ onSaveButtonClick }>
           <label htmlFor="name">
             Nome:
             <input
