@@ -50,9 +50,14 @@ class App extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+
+    const { cardTrunfo } = this.state;
+    if (cardTrunfo) {
+      this.setState({ hasTrunfo: true });
+    }
     const {
       name, description, attr1, attr2, attr3,
-      image, rare, trunfo, imgUrl,
+      image, rare, trunfo, imgUrl, hasTrunfo,
     } = this.state;
     this.setState((previousState) => ({
       deck: [...previousState.deck, {
@@ -78,6 +83,7 @@ class App extends React.Component {
         trunfo: false,
         buttonDisabled: true,
         imgUrl: '',
+        hasTrunfo: trunfo || hasTrunfo,
       });
     });
   };
