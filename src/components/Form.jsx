@@ -96,7 +96,7 @@ class Form extends Component {
               hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p> : (
                 <input
                   type="checkbox"
-                  name="checkbox"
+                  name="trunfo"
                   data-testid="trunfo-input"
                   checked={ cardTrunfo }
                   onChange={ onInputChange }

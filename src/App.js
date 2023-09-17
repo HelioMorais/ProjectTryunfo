@@ -12,7 +12,7 @@ class App extends React.Component {
     attr2: 0,
     attr3: 0,
     rare: 'normal',
-    trunfo: true,
+    trunfo: false,
     imgUrl: '',
     buttonDisabled: true,
     deck: [],
@@ -58,10 +58,10 @@ class App extends React.Component {
     }
     const {
       name, description, attr1, attr2, attr3,
-      image, rare, trunfo, imgUrl, hasTrunfo,
+      image, rare, trunfo, imgUrl, hasTrunfo, deck,
     } = this.state;
-    this.setState((previousState) => ({
-      deck: [...previousState.deck, {
+    this.setState(() => ({
+      deck: [...deck, {
         name,
         description,
         attr1,
@@ -119,9 +119,9 @@ class App extends React.Component {
           cardRare={ rare }
           cardTrunfo={ trunfo }
         />
-        <section>
-          <ListCard cardDeck={ deck } />
-        </section>
+
+        <ListCard cardDeck={ deck } deleteCard={ this.handleDelete } />
+
       </main>
 
     );
